@@ -148,9 +148,9 @@ const Homepage = () => {
               }}
             >
               <option value=''>All</option>
-              <option value='electronics'>Electronics</option>
-              <option value='mobiles'>Mobiles</option>
-              <option value='fashion'>Fashion</option>
+              <option value='shirt'>Shirts</option>
+              <option value='pant'>Pants</option>
+              <option value='hat'>Hats</option>
             </select>
           </div>
 
