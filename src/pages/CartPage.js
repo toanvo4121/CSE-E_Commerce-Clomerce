@@ -118,7 +118,7 @@ const CartPage = () => {
                   <img src={item.imageURL} alt='' />
                   <div className='product-info'>
                     <h3 className='product-name'>{item.name}</h3>
-                    <h2 className='product-price'>{item.price} USD</h2>
+                    <h2 className='product-cart-price'>{item.price} USD</h2>
                     <p
                       className='product-remove'
                       onClick={() => {
