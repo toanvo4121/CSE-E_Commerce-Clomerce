@@ -5,6 +5,7 @@ import fireDB from '../fireConfig'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import '../stylesheets/Layout.css'
 
 const ProductInfo = () => {
   const [loading, setLoading] = useState(false)
@@ -39,26 +40,28 @@ const ProductInfo = () => {
   }
   return (
     <Layout loading={loading}>
-      <div className='container' style={{ marginTop: '100px' }}>
+      <div className='container' style={{ marginTop: '150px' }}>
         <div className='row justify-content-center'>
           <div className='col-md-8'>
             {' '}
             {product && (
               <div>
-                <p>
-                  <b>{product.name}</b>
-                </p>
-                <img
-                  src={product.imageURL}
-                  alt=''
-                  className='product-info-img'
-                />
-                <hr />
-                <p>{product.description}</p>
-                <div className='d-flex justify-content-end my-3'>
-                  <button onClick={() => addToCart(product)}>
-                    Add To Cart
-                  </button>
+                <div className='products-info'>
+                  <img src={product.imageURL} alt='product-info-img' className='product-info-img' />
+                  <div className='float'></div>
+                  <div className='product-price'>
+                      <h2>{product.name}</h2>
+                    <p style={{fontSize:'26px'}}>Giá tiền: <b>{product.price}</b>$</p>
+                    <hr/>
+                    <p style={{fontSize:'20px'}}>Mô tả:</p>
+                    <p style={{marginLeft:'20px'}}>{product.description}</p>
+                    <hr/>
+                    <div className='d-flex justify-content-center my-3'>
+                      <button className='gradient_bg' onClick={() => addToCart(product)}>
+                        Add To Cart
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
