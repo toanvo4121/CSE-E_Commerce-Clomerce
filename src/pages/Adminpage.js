@@ -274,7 +274,9 @@ const Adminpage = () => {
                 <p><span style={{fontWeight: 'bold'}}>Payment method</span>: {order.paymethod}</p>
 
               </div>
-                <hr/>
+              <div className='hr-position'>
+                    <hr/>
+                  </div>
                 <h2 className='order-price'>
                   Total : {order.totalAmount} USD
                 </h2>

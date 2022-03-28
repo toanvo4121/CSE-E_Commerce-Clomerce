@@ -39,27 +39,39 @@ const OrdersPage = () => {
             .filter((obj) => obj.userId === userid)
             .map((order) => {
               return (
-                <div className='order-transaction2'>
-                  <h2 className='payday'>Day: {order.payday}</h2>
-                  <hr />
+                <div className='order-transaction'>
+                <hr/>
+                <div className='products'>
                   {order.cartItems.map((item) => {
                     return (
                       <div className='product'>
                         <img src={item.imageURL} alt='' />
                         <div className='product-info'>
-                          <h3 className='product-name'>{item.name}</h3>
-                          <h2 className='product-cart-price'>
+                          <h4 className='product-name'>{item.name}</h4>
+                          <h3 className='product-cart-price'>
                             {item.price} USD
-                          </h2>
+                          </h3>
                         </div>
                       </div>
                     )
                   })}
-                  <hr />
-                  <h2 className='order-price'>
-                    Total price: {order.totalAmount} USD
-                  </h2>
-                </div>
+              </div>
+              <div className='admin-cart-total'>
+                <p><span style={{fontWeight: 'bold'}}>Customer</span> : {order.addressInfo.name}</p>
+                <p><span style={{fontWeight: 'bold'}}>Order day</span>: {order.payday}</p>
+                <p><span style={{fontWeight: 'bold'}}>Address</span>: {order.addressInfo.address}</p>
+                <p><span style={{fontWeight: 'bold'}}>Phone number</span>: {order.addressInfo.phoneNumber}</p>
+                <p><span style={{fontWeight: 'bold'}}>Email</span>: {order.email}</p>
+                <p><span style={{fontWeight: 'bold'}}>Payment method</span>: {order.paymethod}</p>
+              </div>
+                
+                  <div className='hr-position'>
+                    <hr/>
+                  </div>
+                
+                <h2 className='order-price'> Total : {order.totalAmount} USD </h2>
+
+              </div>
               )
             })}
         </div>

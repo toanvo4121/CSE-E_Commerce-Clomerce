@@ -62,12 +62,14 @@ const Homepage = () => {
         <div className='slide-blur'></div>
         <div className='on-top'>
           <img src={Logo} alt='' />
+          <div className='on-top-p'>
+          <h1>Best Localbrand in your area</h1>
           <h2>
             Normal clothes make you a princess.
             <br />
             CloMerce make you be a queen.
           </h2>
-          <h1>Best Localbrand in your area</h1>
+          </div>
         </div>
       </div>
 
