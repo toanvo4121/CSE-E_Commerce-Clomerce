@@ -53,18 +53,23 @@
 }
 
 .on-top {
+  display: flex;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   left: 120px;
   color: white;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: left;
+}
+
+.on-top-p{
+  margin: 50px 40px 0 90px;
 }
 
 .on-top img {
   border-radius: 10px;
-  width: 400px;
+  width: 500px;
 }
 
 .on-top h1 {
@@ -522,6 +527,13 @@ p {
   bottom: 40px;
   right: 50px;
 }
+
+.hr-position{
+  position: absolute;
+  width: 91%;
+  bottom: 72px;
+}
+
 .page-info {
   color: #fff;
 }
