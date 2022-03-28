@@ -495,13 +495,28 @@ p {
   width: 80%;
   margin: 20px auto;
 }
-.order-transaction {
+.order-transaction3 {
+  position: relative;
+  display: flex;
+}
+
+.order-transaction2 {
   position: relative;
   margin-bottom: 50px;
   padding: 50px 50px 80px 50px;
   border: 2px solid rgba(126, 0, 208, 1);
   border-radius: 10px;
 }
+
+.order-transaction {
+  display: flex;
+  position: relative;
+  margin-bottom: 50px;
+  padding: 50px 50px 80px 50px;
+  border: 2px solid rgba(126, 0, 208, 1);
+  border-radius: 10px;
+}
+
 .order-price {
   position: absolute;
   bottom: 40px;
@@ -509,4 +524,9 @@ p {
 }
 .page-info {
   color: #fff;
+}
+
+.admin-container{
+  width: 80%;
+  margin: 20px auto;
 }
