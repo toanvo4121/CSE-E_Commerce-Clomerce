@@ -5,6 +5,7 @@ import {
   doc,
   getDocs,
   setDoc,
+  updateDoc
 } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
@@ -12,6 +13,7 @@ import Layout from "../components/Layout";
 import fireDB from "../fireConfig";
 import { Modal, Tab, Tabs } from "react-bootstrap";
 import { toast } from "react-toastify";
+import '../stylesheets/products.css'
 const Adminpage = () => {
   const [orders, setOrders] = useState([]);
   const [products, setProducts] = useState([]);
@@ -107,6 +109,7 @@ const Adminpage = () => {
     setAdd(true);
     handleShow();
   };
+
   const deleteProduct = async (item) => {
     try {
       setLoading(true);
@@ -122,6 +125,7 @@ const Adminpage = () => {
 
   return (
     <Layout loading={loading}>
+      <div className='admin-container'>
       <Tabs
         defaultActiveKey="products"
         id="uncontrolled-tab-example"
@@ -130,48 +134,43 @@ const Adminpage = () => {
         <Tab eventKey="products" title="Products">
           <div className="d-flex justify-content-between">
             <h3>Products List</h3>
-            <button onClick={addHandler}>Add Product</button>
+            <p className='product-add'onClick={addHandler} >
+                            <i className='fa fa-plus' aria-hidden='true'></i>
+                            <span className='remove'>Add Product</span>
+                          </p>
           </div>
-          <table className="table mt-3">
-            <thead>
-              <tr>
-                <th>Image</th>
-                <th>Name</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {products.map((item) => {
-                return (
-                  <tr>
-                    <td>
-                      <img src={item.imageURL} height="80" width="80" />
-                    </td>
-                    <td>{item.name}</td>
-                    <td>{item.category}</td>
-                    <td>{item.price}</td>
-                    <td>
-                      <FaTrash
-                        color="red"
-                        size={20}
-                        onClick={() => {
-                          deleteProduct(item);
-                        }}
-                      />
 
-                      <FaEdit
-                        onClick={() => editHandler(item)}
-                        color="blue"
-                        size={20}
-                      />
-                    </td>
-                  </tr>
+          <div className='order-transaction3'>
+            <hr/>
+                <div className='products-admin'>
+          {products.map((item) => {
+                return (
+
+                  <div className='product'>
+                        <img src={item.imageURL} alt='' />
+                        <div className='product-info'>
+                          <h4 className='product-name'>{item.name}</h4>
+                          <h4 className='product-name'>{item.category}</h4>
+                          <h3 className='product-cart-price'>
+                            {item.price} USD
+                          </h3>
+
+                          <p className='product-edit'onClick={() => {editHandler(item)}} >
+                            <i className='fa fa-edit' aria-hidden='true'></i>
+                            <span className='remove'>Update</span>
+                          </p>
+
+                          <p className='product-remove'onClick={() => {deleteProduct(item)}} >
+                            <i className='fa fa-trash' aria-hidden='true'></i>
+                            <span className='remove'>Remove</span>
+                          </p>
+                        </div>
+                      </div>
                 );
               })}
-            </tbody>
-          </table>
+              </div>
+              </div>
+
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
               <Modal.Title>
@@ -249,35 +248,42 @@ const Adminpage = () => {
         <Tab eventKey="orders" title="Orders">
           {orders.map((order) => {
             return (
-              <table className="table mt-3 order">
-                <thead>
-                  <tr>
-                    <th>Image</th>
-                    <th>Name</th>
-                    <th>Price</th>
-                  </tr>
-                </thead>
-                <tbody>
+              <div className='order-transaction'>
+                <hr/>
+                <div className='products'>
                   {order.cartItems.map((item) => {
                     return (
-                      <tr>
-                        <td>
-                          <img src={item.imageURL} height="80" width="80" />
-                        </td>
-                        <td>{item.name}</td>
-                        <td>{item.price}</td>
-                      </tr>
-                    );
+                      <div className='product'>
+                        <img src={item.imageURL} alt='' />
+                        <div className='product-info'>
+                          <h4 className='product-name'>{item.name}</h4>
+                          <h3 className='product-cart-price'>
+                            {item.price} USD
+                          </h3>
+                        </div>
+                      </div>
+                    )
                   })}
-                </tbody>
-              </table>
-            );
+              </div>
+              <div className='admin-cart-total'>
+                <p><span style={{fontWeight: 'bold'}}>Customer</span> : {order.addressInfo.name}</p>
+                <p><span style={{fontWeight: 'bold'}}>Order day</span>: {order.payday}</p>
+                <p><span style={{fontWeight: 'bold'}}>Address</span>: {order.addressInfo.address}</p>
+                <p><span style={{fontWeight: 'bold'}}>Phone number</span>: {order.addressInfo.phoneNumber}</p>
+                <p><span style={{fontWeight: 'bold'}}>Email</span>: {order.email}</p>
+                <p><span style={{fontWeight: 'bold'}}>Payment method</span>: {order.paymethod}</p>
+
+              </div>
+                <hr/>
+                <h2 className='order-price'>
+                  Total : {order.totalAmount} USD
+                </h2>
+              </div>
+            )
           })}
         </Tab>
-        <Tab eventKey="contact" title="Contact">
-          <h1>Users</h1>
-        </Tab>
       </Tabs>
+      </div>
     </Layout>
   );
 };

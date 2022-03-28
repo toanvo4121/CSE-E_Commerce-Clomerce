@@ -57,6 +57,7 @@ const CartPage = () => {
 
   const placeOrder = async () => {
     const payday = new Date().toLocaleDateString();
+    const paymethod = 'cash payment'
     const addressInfo = { name, address, pincode, phoneNumber }
     const orderInfo = {
       cartItems,
@@ -65,6 +66,7 @@ const CartPage = () => {
       email: JSON.parse(localStorage.getItem('currentUser')).user.email,
       userId: JSON.parse(localStorage.getItem('currentUser')).user.uid,
       payday,
+      paymethod,
     }
 
     try {
@@ -83,6 +85,7 @@ const CartPage = () => {
   const payPaypal = async () => {
     localStorage.setItem('isPaypalSuccess', false)
     const payday = new Date().toLocaleDateString();
+    const paymethod = 'cash payment'
     const addressInfo = { name, address, pincode, phoneNumber }
     const orderInfo = {
       cartItems,
@@ -91,6 +94,7 @@ const CartPage = () => {
       email: JSON.parse(localStorage.getItem('currentUser')).user.email,
       userId: JSON.parse(localStorage.getItem('currentUser')).user.uid,
       payday,
+      paymethod,
     }
     const payInfor = {
       orderInfo,

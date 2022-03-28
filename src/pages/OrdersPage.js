@@ -39,7 +39,7 @@ const OrdersPage = () => {
             .filter((obj) => obj.userId === userid)
             .map((order) => {
               return (
-                <div className='order-transaction'>
+                <div className='order-transaction2'>
                   <h2 className='payday'>Day: {order.payday}</h2>
                   <hr />
                   {order.cartItems.map((item) => {
