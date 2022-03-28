@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FaBars, FaCartPlus, FaUser } from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 
-import Logo from '../assets/clomerce.png'
+import Logo from '../assets/clomerce.jpeg'
 
 const Header = () => {
   const { cartItems } = useSelector((state) => state.cartReducer)
@@ -23,6 +23,7 @@ const Header = () => {
               alt=''
               style={{ height: '50px', borderRadius: '10px' }}
             />
+            <h2> CloMerce</h2>
           </Link>
           <button
             className='navbar-toggler'

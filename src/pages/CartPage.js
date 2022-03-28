@@ -108,43 +108,47 @@ const CartPage = () => {
 
   return (
     <Layout loading={loading}>
-      <div style={{ marginTop: '100px' }}></div>
-      <table className='table mt-3'>
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>Price</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {cartItems.map((item) => {
-            return (
-              <tr>
-                <td>
-                  <img src={item.imageURL} height='80' width='80' />
-                </td>
-                <td>{item.name}</td>
-                <td>{item.price} USD</td>
-                <td>
-                  <FaTrash
-                    onClick={() => {
-                      deleteFromCart(item)
-                    }}
-                  />
-                </td>
-              </tr>
-            )
-          })}
-        </tbody>
-      </table>
-      <div className='d-flex justify-content-end'>
-        <h1 className='total-amount'>Total Amount ={totalAmount} USD </h1>
+      <div className='container'>
+        <h1 className='shopping-cart'>Shopping Cart</h1>
+        <div className='cart'>
+          <div className='products'>
+            {cartItems.map((item) => {
+              return (
+                <div className='product'>
+                  <img src={item.imageURL} alt='' />
+                  <div className='product-info'>
+                    <h3 className='product-name'>{item.name}</h3>
+                    <h2 className='product-price'>{item.price} USD</h2>
+                    <p
+                      className='product-remove'
+                      onClick={() => {
+                        deleteFromCart(item)
+                      }}
+                    >
+                      <i className='fa fa-trash' aria-hidden='true'></i>
+                      <span className='remove'>Remove</span>
+                    </p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+          <div className='cart-total'>
+            <p>
+              <span>Total Price</span>
+              <span>{totalAmount} USD</span>
+            </p>
+            <p>
+              <span>Number of Items</span>
+              <span>{cartItems.length}</span>
+            </p>
+            <button className='gradient_bg pay-button' onClick={handleShow}>
+              Place Order
+            </button>
+          </div>
+        </div>
       </div>
-      <div className='d-flex justify-content-end mt-3'>
-        <button onClick={handleShow}>Place Order</button>
-      </div>
+      {/* Payment Process Modal */}
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Address</Modal.Title>
@@ -190,8 +194,12 @@ const CartPage = () => {
             />
           </div>
         </Modal.Body>
-        <Modal.Footer>
-          <button variant='primary' onClick={placeOrder}>
+        <Modal.Footer className='modal-footer'>
+          <button
+            className='btn-payment gradient_bg'
+            variant='primary'
+            onClick={placeOrder}
+          >
             Cash Payment
           </button>
 
@@ -208,6 +216,7 @@ const CartPage = () => {
               </Modal>
             ) : (
               <button
+                className='btn-payment gradient_bg'
                 onClick={() => {
                   setCheckOut(true)
                   payPaypal()

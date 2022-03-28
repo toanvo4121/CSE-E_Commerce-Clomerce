@@ -1,6 +1,6 @@
 .navbar {
   background-color: #80deea !important;
-  box-shadow: 0 10px 8px rgba(7, 0, 0, 0.651);
+  box-shadow: 0 5px 8px rgba(7, 0, 0, 0.651);
   position: fixed;
   top: 0;
   left: 0;
@@ -25,6 +25,14 @@
 .navbar-brand {
   color: #fff !important;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-brand h2 {
+  margin-left: 15px;
+  margin-bottom: 0px;
 }
 .slide {
   width: 100%;
@@ -67,15 +75,12 @@
 
 .on-top h2 {
   padding-bottom: 0px;
-  padding-top: 30px;
   font-size: 25px;
   font-weight: 200;
 }
 
 .my-content {
   min-height: 660px;
-  margin-left: auto;
-  margin-right: auto;
   text-align: center;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -127,6 +132,8 @@
   align-items: center;
   flex-wrap: wrap;
   padding: 30px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .team-container .card {
   width: 250px;
@@ -238,7 +245,8 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #dcdcdc;
+  background-color: #eeeeee;
+  border-radius: 20px;
 }
 
 .container-card {
@@ -253,6 +261,7 @@
 .container-card .card {
   width: 100%;
   background: #fff;
+  border-radius: 15px;
 }
 
 .container-card .card .imgBx2 {
@@ -271,6 +280,8 @@
   object-fit: cover;
   transition: 0.5s ease-in-out;
   transform-origin: right;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
 .container-card .card:hover .imgBx2 img {
@@ -376,16 +387,6 @@
   bottom: 0;
   left: 0;
   right: 0;
-}
-button {
-  background-color: #003f5c;
-  box-shadow: none;
-  border: 1px solid rgba(255, 255, 255, 0.651);
-  color: #fff;
-  padding: 5px;
-}
-button:hover {
-  background-color: tomato;
 }
 .loader {
   position: absolute;

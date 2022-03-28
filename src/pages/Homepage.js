@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import slide from '../assets/slide.png'
-import Logo from '../assets/clomerce.png'
+import Logo from '../assets/clomerce-slide-white.png'
 import { Mem1, Mem2, Mem3, Mem4, Mem5 } from '../assets'
 
 const Homepage = () => {
