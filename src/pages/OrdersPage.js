@@ -54,7 +54,7 @@ const OrdersPage = () => {
                           <img src={item.imageURL} height="80" width="80" />
                         </td>
                         <td>{item.name}</td>
-                        <td>{item.price}</td>
+                        <td>{item.price}$</td>
                       </tr>
                     );
                   })}

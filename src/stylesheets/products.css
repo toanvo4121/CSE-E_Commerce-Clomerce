@@ -28,7 +28,9 @@
   font-weight: bold !important;
 }
 .product-info-img {
-  height: 70vh;
+  height: 50vh;
+  border: 1px solid rgb(0, 183, 255);
+  border-radius: 18px;
 }
 .total-amount {
   background-color: #e2c7cf;
@@ -46,4 +48,5 @@
     rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
   /* border: 1px solid black; */
   /* border-bottom: 1px solid black; */
+  min-height: 260px;
 }
