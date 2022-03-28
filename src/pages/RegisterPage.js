@@ -74,7 +74,7 @@ const RegisterPage = () => {
                 setCPassword(e.target.value);
               }}
             />
-            <button className="my-3" onClick={register}>
+            <button className="mt-4 btn-register" onClick={register}>
               Register
             </button>
             <hr />

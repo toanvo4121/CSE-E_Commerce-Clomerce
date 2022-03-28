@@ -20,9 +20,6 @@ function Footer() {
                 <Link className={`${style.Link} ${style.TextLink}`} to="/about">
                   About Us
                 </Link>
-                <Link className={`${style.Link} ${style.TextLink}`} to="/faq">
-                  FAQ
-                </Link>
                 <a className={`${style.Link} ${style.TextLink}`} href="mailto:no-mail@email.com">
                   Contact Us
                 </a>
@@ -39,9 +36,6 @@ function Footer() {
                 </Link>
                 <Link className={`${style.Link} ${style.TextLink}`} to="/privacy-policy">
                   Privacy Policy
-                </Link>
-                <Link className={`${style.Link} ${style.TextLink}`} to="/disclaimer">
-                  Disclaimer
                 </Link>
               </div>
             </div>
@@ -73,7 +67,7 @@ function Footer() {
         <div className={`mb-2 ${style.Row}`}>
           <span
             className={`${style.Copyright}`}>
-            Copyright © {new Date().getFullYear()} Tap FoodWorks Ltd. | All Rights Reserved
+            Copyright © {new Date().getFullYear()} Akatsuki Ltd. | All Rights Reserved
           </span>
         </div>
       </div>

@@ -1,7 +1,6 @@
 import { addDoc, collection } from 'firebase/firestore'
 import React, { useEffect, useState } from 'react'
 import { Modal } from 'react-bootstrap'
-import { FaTrash } from 'react-icons/fa'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { toast } from 'react-toastify'
@@ -57,12 +56,15 @@ const CartPage = () => {
   }
 
   const placeOrder = async () => {
+    const payday = new Date().toLocaleDateString();
     const addressInfo = { name, address, pincode, phoneNumber }
     const orderInfo = {
       cartItems,
+      totalAmount,
       addressInfo,
       email: JSON.parse(localStorage.getItem('currentUser')).user.email,
       userId: JSON.parse(localStorage.getItem('currentUser')).user.uid,
+      payday,
     }
 
     try {
@@ -80,12 +82,15 @@ const CartPage = () => {
 
   const payPaypal = async () => {
     localStorage.setItem('isPaypalSuccess', false)
+    const payday = new Date().toLocaleDateString();
     const addressInfo = { name, address, pincode, phoneNumber }
     const orderInfo = {
       cartItems,
+      totalAmount,
       addressInfo,
       email: JSON.parse(localStorage.getItem('currentUser')).user.email,
       userId: JSON.parse(localStorage.getItem('currentUser')).user.uid,
+      payday,
     }
     const payInfor = {
       orderInfo,
@@ -103,7 +108,7 @@ const CartPage = () => {
       localStorage.setItem('isPaypalSuccess', false)
       handleClose()
       deleteAllCart()
-    } catch (error) {}
+    } catch (error) { }
   }
 
   return (

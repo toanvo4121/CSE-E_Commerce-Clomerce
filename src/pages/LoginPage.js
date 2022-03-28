@@ -50,7 +50,7 @@ const LoginPage = () => {
               }}
             />
 
-            <button className="my-3" onClick={login}>
+            <button className="mt-4 btn-login" onClick={login}>
               Login
             </button>
             <hr />
@@ -59,7 +59,7 @@ const LoginPage = () => {
         </div>
         <div className="col-md-5 z1">
           <lottie-player
-            src="https://assets9.lottiefiles.com/packages/lf20_yr6zz3wv.json"
+            src="https://assets3.lottiefiles.com/packages/lf20_hu9cd9.json"
             background="transparent"
             speed="1"
             loop
