@@ -71,6 +71,7 @@ const Adminpage = () => {
   }
 
   const editHandler = (item) => {
+    setAdd(false);
     setProduct(item);
     setShow(true);
   };
