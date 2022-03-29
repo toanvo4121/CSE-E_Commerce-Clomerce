@@ -59,12 +59,12 @@
   transform: translateY(-50%);
   left: 120px;
   color: white;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   text-align: left;
 }
 
-.on-top-p{
-  margin: 50px 40px 0 90px;
+.on-top-p {
+  margin: 10px 40px 0 90px;
 }
 
 .on-top img {
@@ -82,6 +82,21 @@
   padding-bottom: 0px;
   font-size: 25px;
   font-weight: 200;
+}
+
+.btn-shop-now {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 16px;
+}
+
+.btn-shop-now:hover {
+  background: none;
+  border: 2px solid white;
+  font-weight: 600;
 }
 
 .my-content {
@@ -528,7 +543,7 @@ p {
   right: 50px;
 }
 
-.hr-position{
+.hr-position {
   position: absolute;
   width: 91%;
   bottom: 72px;
@@ -538,7 +553,7 @@ p {
   color: #fff;
 }
 
-.admin-container{
+.admin-container {
   width: 80%;
   margin: 20px auto;
 }

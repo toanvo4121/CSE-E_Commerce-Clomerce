@@ -47,16 +47,25 @@ const ProductInfo = () => {
             {product && (
               <div>
                 <div className='products-info'>
-                  <img src={product.imageURL} alt='product-info-img' className='product-info-img' />
+                  <img
+                    src={product.imageURL}
+                    alt='product-info-img'
+                    className='product-info-img'
+                  />
                   <div className='product-price'>
                     <h2>{product.name}</h2>
-                    <p style={{ fontSize: '26px' }}>Giá tiền: <b>${product.price}</b></p>
+                    <p style={{ fontSize: '26px' }}>
+                      Giá tiền: <b>${product.price}</b>
+                    </p>
                     <hr />
                     <p style={{ fontSize: '20px' }}>Mô tả:</p>
                     <p style={{ marginLeft: '20px' }}>{product.description}</p>
                     <hr />
                     <div className='d-flex justify-content-center my-3'>
-                      <button className='gradient_bg btn-add-to-cart' onClick={() => addToCart(product)}>
+                      <button
+                        className='gradient_bg btn-add-to-cart'
+                        onClick={() => addToCart(product)}
+                      >
                         Add To Cart
                       </button>
                     </div>

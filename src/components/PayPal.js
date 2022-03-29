@@ -1,7 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { addDoc, collection } from "firebase/firestore";
 import { toast } from "react-toastify";
-import fireDB from "../fireConfig";
 
 export default function Paypal(order) {
   const paypal = useRef();
@@ -25,7 +23,7 @@ export default function Paypal(order) {
           });
         },
         onApprove: async (data, actions) => {
-          const order = await actions.order.capture();
+          await actions.order.capture();
           localStorage.setItem("isPaypalSuccess", true);
           toast.success("Order Placed Successfully");
           console.log("Paypal ok");
@@ -38,7 +36,7 @@ export default function Paypal(order) {
         },
       })
       .render(paypal.current);
-  }, []);
+  });
 
   return (
     <div>

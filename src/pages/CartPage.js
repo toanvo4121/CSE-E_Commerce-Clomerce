@@ -9,7 +9,6 @@ import '../stylesheets/cart.css'
 
 import Layout from '../components/Layout'
 import fireDB from '../fireConfig'
-import { render } from '@testing-library/react'
 
 const CartPage = () => {
   const [totalAmount, setTotalAmount] = useState(0)
@@ -71,7 +70,7 @@ const CartPage = () => {
 
     try {
       setLoading(true)
-      const result = await addDoc(collection(fireDB, 'orders'), orderInfo)
+      await addDoc(collection(fireDB, 'orders'), orderInfo)
       toast.success('Order Placed Successfully')
       setLoading(false)
       handleClose()
@@ -105,7 +104,7 @@ const CartPage = () => {
 
   const updateOrder = async () => {
     try {
-      const result = await addDoc(
+      await addDoc(
         collection(fireDB, 'orders'),
         PaypalInfor.orderInfo
       )

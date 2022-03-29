@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import Loader from "../components/Loader";
 import { toast } from "react-toastify";
-import { render } from "@testing-library/react";
 const RegisterPage = () => {
   const auth = getAuth();
   const [email, setEmail] = useState("");
@@ -13,7 +12,7 @@ const RegisterPage = () => {
   const register = async () => {
     try {
       setLoading(true);
-      const result = await createUserWithEmailAndPassword(
+      await createUserWithEmailAndPassword(
         auth,
         email,
         password

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
-import { collection, addDoc, getDocs } from 'firebase/firestore'
+import { collection, getDocs } from 'firebase/firestore'
 import fireDB from '../fireConfig'
-import { fireproducts } from '../firecommerce-products'
+// import { fireproducts } from '../firecommerce-products'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -22,15 +22,15 @@ const Homepage = () => {
     getData()
   }, [])
 
-  function addProductsData() {
-    fireproducts.map(async (product) => {
-      try {
-        await addDoc(collection(fireDB, 'products'), product)
-      } catch (error) {
-        console.log(error)
-      }
-    })
-  }
+  // function addProductsData() {
+  //   fireproducts.map(async (product) => {
+  //     try {
+  //       await addDoc(collection(fireDB, 'products'), product)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   })
+  // }
   async function getData() {
     try {
       setLoading(true)
@@ -63,12 +63,18 @@ const Homepage = () => {
         <div className='on-top'>
           <img src={Logo} alt='' />
           <div className='on-top-p'>
-          <h1>Best Localbrand in your area</h1>
-          <h2>
-            Normal clothes make you a princess.
-            <br />
-            CloMerce make you be a queen.
-          </h2>
+            <h1>Best Localbrand in your area</h1>
+            <h2>
+              Normal clothes make you a princess.
+              <br />
+              CloMerce make you be a queen.
+            </h2>
+            <button
+              className='btn-shop-now gradient_bg'
+              onClick={() => (window.location.href = '#shop-now')}
+            >
+              Shop Now
+            </button>
           </div>
         </div>
       </div>
@@ -119,13 +125,13 @@ const Homepage = () => {
             </div>
             <div className='card-content'>
               <h2>Nguyễn Tư Phong</h2>
-              <p></p>
+              <p>MSSV: 1813528</p>
             </div>
           </div>
         </div>
       </div>
 
-      <div className='container'>
+      <div className='container' id='shop-now'>
         <div className='show-product'>
           <div className='my-content1 qq'>
             <h2 className='heading'> Product </h2>
