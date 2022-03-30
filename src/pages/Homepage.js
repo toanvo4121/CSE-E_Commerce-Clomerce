@@ -159,6 +159,7 @@ const Homepage = () => {
               <option value='shirt'>Shirts</option>
               <option value='pant'>Pants</option>
               <option value='hat'>Hats</option>
+              <option value='hoodie'>Hoodies</option>
             </select>
           </div>
 
