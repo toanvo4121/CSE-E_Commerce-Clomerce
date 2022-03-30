@@ -45,7 +45,7 @@ function Footer() {
               Social Media
             </h2>
             <div className={style.Row}>
-              <a className={style.Link} href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+              <a className={style.Link} href="https://www.facebook.com/100005291674208/videos/3152933761631939/" target="_blank" rel="noopener noreferrer">
                 <div className={`${style.SocialMediaBtn} ${style.FaceBook} `}>
                   <i className="fa fa-facebook" aria-hidden="true" />
                 </div>
@@ -55,7 +55,7 @@ function Footer() {
                   <i className="fa fa-twitter" aria-hidden="true" />
                 </div>
               </a>
-              <a className={style.Link} href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+              <a className={style.Link} href="https://www.youtube.com/watch?v=fK5Cll4cl6E" target="_blank" rel="noopener noreferrer">
                 <div className={`${style.SocialMediaBtn} ${style.Youtube}`}>
                   <i className="fa fa-youtube-play" aria-hidden="true" />
                 </div>
