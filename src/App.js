@@ -1,6 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "./App.css";
-import { lazy } from 'react';
 import CartPage from "./pages/CartPage";
 import Homepage from "./pages/Homepage";
 import LoginPage from "./pages/LoginPage";
