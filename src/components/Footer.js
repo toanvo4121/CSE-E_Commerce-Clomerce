@@ -55,7 +55,7 @@ function Footer() {
                   <i className="fa fa-twitter" aria-hidden="true" />
                 </div>
               </a>
-              <a className={style.Link} href="https://www.youtube.com/watch?v=fK5Cll4cl6E" target="_blank" rel="noopener noreferrer">
+              <a className={style.Link} href="https://www.youtube.com/watch?v=oEGWSXrXTrA&t=3s" target="_blank" rel="noopener noreferrer">
                 <div className={`${style.SocialMediaBtn} ${style.Youtube}`}>
                   <i className="fa fa-youtube-play" aria-hidden="true" />
                 </div>
