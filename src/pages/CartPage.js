@@ -37,7 +37,7 @@ const CartPage = () => {
   useEffect(() => {
     let temp = 0
     cartItems.forEach((cartItems) => {
-      temp = temp + parseInt(cartItems.price)
+      temp = temp + parseFloat(cartItems.price)
     })
     setTotalAmount(temp)
   }, [cartItems])
