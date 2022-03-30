@@ -84,7 +84,7 @@ const CartPage = () => {
   const payPaypal = async () => {
     localStorage.setItem('isPaypalSuccess', false)
     const payday = new Date().toLocaleDateString();
-    const paymethod = 'cash payment'
+    const paymethod = 'paypal payment'
     const addressInfo = { name, address, pincode, phoneNumber }
     const orderInfo = {
       cartItems,
