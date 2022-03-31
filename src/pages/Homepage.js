@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import { collection, getDocs } from 'firebase/firestore'
 import fireDB from '../fireConfig'
-// import { fireproducts } from '../firecommerce-products'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
@@ -22,15 +21,6 @@ const Homepage = () => {
     getData()
   }, [])
 
-  // function addProductsData() {
-  //   fireproducts.map(async (product) => {
-  //     try {
-  //       await addDoc(collection(fireDB, 'products'), product)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   })
-  // }
   async function getData() {
     try {
       setLoading(true)

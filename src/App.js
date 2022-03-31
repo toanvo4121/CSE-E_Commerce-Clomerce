@@ -14,8 +14,6 @@ import OrdersPage from "./pages/OrdersPage";
 import Adminpage from "./pages/Adminpage";
 
 import About from './components/About/About'
-import Disclaimer from './components/Disclaimer/Disclaimer'
-import FAQ from './components/FAQ/FAQ'
 import Privacy from './components/Privacy/Privacy'
 import Terms from './components/Terms/Terms'
 
@@ -37,8 +35,6 @@ function App() {
           <Route path="/login" exact element={<LoginPage />} />
           <Route path="/register" exact element={<RegisterPage />} />
           <Route path="/about" exact element={<About />} />
-          <Route path="/disclaimer" exact element={<Disclaimer />} />
-          <Route path="/faq" exact element={<FAQ />} />
           <Route path="/privacy-policy" exact element={<Privacy />} />
           <Route path="/terms-and-conditions" exact element={<Terms />} />
           <Route
